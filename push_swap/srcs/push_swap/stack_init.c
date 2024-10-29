@@ -59,11 +59,9 @@ void	init_stack_a_for_split(t_stack_node **a, char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (!ft_atol_for_split(av[i], a, av))
-			free_errors_for_split(a, av);
 		n = ft_atol_for_split(av[i], a, av);
 		if (error_duplicate(*a, (int)n))
-			free_errors_for_split(a, av); 
+			free_errors_for_split(a, av);
 		append_node(a, (int)n);
 		i++;
 	}
