@@ -75,3 +75,9 @@ int	ft_atol_for_split(char *str, t_stack_node **stack, char **av)
 	check_atol_split(number, sign, stack, av);
 	return (sign * number);
 }
+
+void	check_atol_split(long n, int sign, t_stack_node **s, char **av)
+{
+	if (n * sign > INT_MAX || n * sign < INT_MIN)
+		free_errors_for_split(s, av);
+}

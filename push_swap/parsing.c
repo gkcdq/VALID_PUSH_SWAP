@@ -12,12 +12,6 @@
 
 #include "push_swap.h"
 
-void	check_atol_split(long n, int sign, t_stack_node **s, char **av)
-{
-	if (n * sign > INT_MAX || n * sign < INT_MIN)
-		free_errors_for_split(s, av);
-}
-
 int	check_double(t_stack_node *a, int n)
 {
 	if (!a)
