@@ -1,5 +1,5 @@
 SRCS        = mvt/push.c mvt/rev_rotate.c mvt/rotate.c mvt/sort_stacks.c mvt/sort_3.c mvt/swap.c mvt/sort_stacks_utils.c\
-              parsing.c a_to_b.c b_to_a.c main.c utils3.c stack_init.c stack_tools.c utils2.c parsing_tools.c
+              parsing.c algo_a.c algo_b.c main.c utils3.c stack_init.c stack_tools.c utils2.c parsing_tools.c
 OBJS        = $(SRCS:.c=.o)
 NAME        = push_swap
 CC          = cc
