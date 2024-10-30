@@ -38,6 +38,16 @@ static void	clear_end_of_main(int ac, char **av, t_stack_node *a)
 	free_stack(&a);
 }
 
+static void	for_norminette(t_stack_node **a, t_stack_node **b)
+{
+	if (stack_len(*a) == 2)
+		sa(a);
+	else if (stack_len(*a) == 3)
+		sort_3(a);
+	else
+		sort_stacks(a, b);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
@@ -49,20 +59,15 @@ int	main(int ac, char **av)
 		return (1);
 	else if (ac == 2)
 	{
+		if (av[1][0] == '\0')
+			return (1);
 		av = split_for_push_swap(av[1]);
 		init_stack_a_for_split(&a, av);
 	}
 	else
 		init_stack_a(&a, av + 1);
 	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_3(&a);
-		else
-			sort_stacks(&a, &b);
-	}
+		for_norminette(&a, &b);
 	clear_end_of_main(ac, av, a);
 	return (0);
 }

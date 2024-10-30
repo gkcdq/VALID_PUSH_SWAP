@@ -12,37 +12,34 @@
 
 #include "../push_swap.h"
 
-static void	swap(t_stack_node **head)
+static void	swap(t_stack_node **top)
 {
-	if (!*head || !(*head)->next)
+	if (!*top || !(*top)->next)
 		return ;
-	*head = (*head)->next;
-	(*head)->prev->prev = *head;
-	(*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	*top = (*top)->next;
+	(*top)->prev->prev = *top;
+	(*top)->prev->next = (*top)->next;
+	if ((*top)->next)
+		(*top)->next->prev = (*top)->prev;
+	(*top)->next = (*top)->prev;
+	(*top)->prev = NULL;
 }
 
-void	sa(t_stack_node **a, bool print)
+void	sa(t_stack_node **a)
 {
 	swap(a);
-	if (!print)
-		ft_printf("sa\n");
+	ft_printf("sa\n");
 }
 
-void	sb(t_stack_node **b, bool print)
+void	sb(t_stack_node **b)
 {
 	swap(b);
-	if (!print)
-		ft_printf("sb\n");
+	ft_printf("sb\n");
 }
 
-void	ss(t_stack_node **a, t_stack_node **b, bool print)
+void	ss(t_stack_node **a, t_stack_node **b)
 {
 	swap(a);
 	swap(b);
-	if (!print)
-		ft_printf("ss\n");
+	ft_printf("ss\n");
 }
