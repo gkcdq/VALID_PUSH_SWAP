@@ -48,12 +48,6 @@ int	main(int ac, char **av)
 	}
 	if (ac == 2)
 		free_av(av);
-	t_stack_node *current = a;
-	while (current != NULL)
-	{
-		ft_printf("%d\n", current->nbr);
-		current = current->next;
-	}
 	free_stack(&a);
 	return (0);
 }

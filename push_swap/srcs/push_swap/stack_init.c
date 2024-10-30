@@ -67,9 +67,6 @@ void	init_stack_a_for_split(t_stack_node **a, char **av)
 	}
 }
 
-
-
-
 t_stack_node	*get_cheapest(t_stack_node *stack)
 {
 	if (!stack)
