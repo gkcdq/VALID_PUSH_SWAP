@@ -1,16 +1,5 @@
-SRCS        = srcs/commands/push.c \
-              srcs/commands/rev_rotate.c \
-              srcs/commands/rotate.c \
-              srcs/commands/sort_stacks.c \
-              srcs/commands/sort_three.c \
-              srcs/commands/swap.c \
-              srcs/push_swap/handle_errors.c \
-              srcs/push_swap/a_to_b.c \
-              srcs/push_swap/b_to_a.c \
-              srcs/push_swap/push_swap.c \
-              srcs/push_swap/split.c \
-              srcs/push_swap/stack_init.c \
-              srcs/push_swap/stack_utils.c
+SRCS        = mvt/push.c mvt/rev_rotate.c mvt/rotate.c mvt/sort_stacks.c mvt/sort_3.c mvt/swap.c mvt/sort_stacks_utils.c\
+              parsing.c a_to_b.c b_to_a.c push_swap.c utils3.c stack_init.c stack_tools.c utils2.c parsing_tools.c
 
 OBJS        = $(SRCS:.c=.o)
 NAME        = push_swap

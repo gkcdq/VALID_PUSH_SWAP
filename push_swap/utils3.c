@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmilin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/30 15:00:46 by tmilin            #+#    #+#             */
+/*   Updated: 2024/10/30 15:00:47 by tmilin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	ft_isspace(char c)
@@ -51,7 +63,7 @@ void	ft_putstrs(char **strs, char *str, int words)
 	strs[j] = 0;
 }
 
-char	**split(char *str)
+char	**split_for_push_swap(char *str)
 {
 	int		words;
 	char	**strs;

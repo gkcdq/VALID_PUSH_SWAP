@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   a_to_b.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmilin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/30 14:59:53 by tmilin            #+#    #+#             */
+/*   Updated: 2024/10/30 14:59:57 by tmilin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	current_index(t_stack_node *stack)
@@ -13,9 +25,9 @@ void	current_index(t_stack_node *stack)
 	{
 		stack->index = i;
 		if (i <= median)
-			stack->above_median = true;
+			stack->median = true;
 		else
-			stack->above_median = false;
+			stack->median = false;
 		stack = stack->next;
 		++i;
 	}
@@ -33,18 +45,17 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->nbr < a->nbr 
-				&& current_b->nbr > best_match_index)
+			if (current_b->nb < a->nb && current_b->nb > best_match_index)
 			{
-				best_match_index = current_b->nbr;
+				best_match_index = current_b->nb;
 				target_node = current_b;
 			}
 			current_b = current_b->next;
 		}
 		if (best_match_index == LONG_MIN)
-			a->target_node = find_max(b);
+			a->target = find_max(b);
 		else
-			a->target_node = target_node;
+			a->target = target_node;
 		a = a->next;
 	}
 }
@@ -59,12 +70,12 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	while (a)
 	{
 		a->push_cost = a->index;
-		if (!(a->above_median))
+		if (!(a->median))
 			a->push_cost = len_a - (a->index);
-		if (a->target_node->above_median)
-			a->push_cost += a->target_node->index;
+		if (a->target->median)
+			a->push_cost += a->target->index;
 		else
-			a->push_cost += len_b - (a->target_node->index);
+			a->push_cost += len_b - (a->target->index);
 		a = a->next;
 	}
 }
