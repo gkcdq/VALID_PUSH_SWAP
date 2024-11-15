@@ -24,7 +24,7 @@ int	ft_atol(char *str, t_stack_node **stack)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if ((str[i] >= 'a' && str[i] <= 'z')
-		|| (str[i + 1] >= 'A' && str[i + 1] <= 'Z'))
+		|| (str[i] >= 'A' && str[i] <= 'Z'))
 		free_errors(stack);
 	if (str[i] == '-' || str[i] == '+')
 	{
